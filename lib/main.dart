@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
 
         body: ListView(
           children: [
-            Task('Aprender Flutter com o Matheus o melhor'),
+            Task('Aprender Flutter no invervalo do curso'),
             Task('Andar de Bike'),
             Task('Meditar'),
             Task('Ir para o intervalo'),
@@ -91,7 +91,22 @@ class _TaskState extends State<Task> {
                     ],
                   ),
                 ),
-                Text('nivel: $nivel', style: TextStyle(color: Colors.white, fontSize: 16),)
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                        child: LinearProgressIndicator(
+                          color: Colors.white,
+                          value: nivel/10,
+                        ),
+                      width: 200,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child:Text('nivel: $nivel', style: TextStyle(color: Colors.white, fontSize: 16),),
+                      ),
+                  ],
+                )
               ],
             ),
 
